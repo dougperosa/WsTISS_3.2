@@ -1,0 +1,299 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissRecursoGlosa.wsdl"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/PGPDataType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ReciboComunicacaoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmTipoEvento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmRegiao.java"/>
+      <url path="TissFault.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmSimNao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAnexoSolicitacaoQuimio.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SignatureMethodType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAutorizacaoProrrogacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmSpSadtSolicitacaoGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAnexoSolicitacaoOPME.java"/>
+      <url path="../../../../../padroes/tiss/schemas/OperadoraPrestador.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ProtocoloRecebimentoAnexoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtPagamentoDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SolicitacaoStatusProtocoloWS.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/DigestMethodType.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SignedInfoType.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/X509DataType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRespostaGlosaItemMedico.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDescontos.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAutorizacaoQuimio.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAnexoLote.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAnexoCabecalho.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmProrrogacaoSolicitacaoGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmHonorarioIndividualGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtSolicitacaoProcedimento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmInternacaoDadosSaida.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SignatureValueType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRespostaGlosa.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoDemonstrativoOdontologia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtFontePagadora.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmConsultaAtendimento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ReciboCancelaGuiaWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtPrestadorIdentificacao.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/RSAKeyValueType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/RespostaElegibilidadeWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoExecutado.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtReciboComunicacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtValorTotal.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SolicitacaoStatusRecursoGlosaWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtLoteAnexoStatus.java"/>
+      <url path="../../../../../padroes/tiss/schemas/AssinaturaDigital.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRespostaRecursoGuiaOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmDemonstrativoPagamento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtHipoteseDiagnostica.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAutorizacaoInternacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDemonstrativoCabecalho.java"/>
+      <url path="../../../../../padroes/tiss/schemas/Epilogo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaDadosOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRecebimentoRecurso.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtPagamentoResumo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/LoteRecursoGlosaWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SolicitacaoDemonstrativoRetornoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtLoginSenha.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DemonstrativoRetornoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SituacaoProtocoloWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloRecebimentoRecurso.java"/>
+      <url path="../../../../../padroes/tiss/schemas/PrestadorOperadora.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/ReferenceType.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/TransformType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloAnexoStatus.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaCabecalho.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAutorizacaoRadio.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/ObjectFactory.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaRecursoLote.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtContaMedicaResumo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAnexoSolicitante.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/KeyValueType.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/CanonicalizationMethodType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtContratadoProfissionalDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoExecutadoHonorIndiv.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAutorizacaoSolicitaStatus.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/KeyInfoType.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SignatureType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRespostaElegibilidade.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaCancelamentoRecibo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/AutorizacaoProcedimentoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoAutorizacaoServico.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtIntervaloCiclos.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAutorizacaoServico.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAutorizacaoSADT.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRespostaGlosaGuiaMedica.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmInternacaoSolicitacaoGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/StTissFault.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtSituacaoProtocolo.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/TransformsType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGlosaRecibo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAutorizacaoInternacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloRecurso.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoExecutadoInt.java"/>
+      <url path="../../../../../padroes/tiss/schemas/LoteGuiasWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/MensagemTISS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtValorCreditoDesconto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtMotivoGlosa.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentosComplementares.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoRecursoGlosaOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAutorizacaoOPME.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmSpSadtAtendimento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmTipoTransacaoANS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAnexoRecebimento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDadosComplementaresBeneficiarioRadio.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtOpmeDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloDetalhe.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmInternacaoResumoGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/package-info.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoAnexoSituacaoInicialnaGTO.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmSolicitacaoLote.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmBeneficiarioComunicacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ComunicacaoBeneficiarioWS.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SPKIDataType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtElegibilidadeVerifica.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmInternacaoDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SolicitacaoProcedimentoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/PedidoElegibilidadeWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmTabelasDiagnostico.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaValorTotalSADT.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDadosResumoDemonstrativo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SolicitacaoStatusAutorizacaoWS.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/ObjectType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtContratadoDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDemonstrativoSolicitacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmTipoTransacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloRecebimento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtCreditoOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ObjectFactory.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CancelaGuiaWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ProtocoloRecebimentoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/LoteAnexoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDadosComplementaresBeneficiario.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoAutorizado.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtIdentEquipeSADT.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmStatusComunicacaoBeneficiario.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoExecutadoOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaRecurso.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDemonstrativoRetorno.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRecebimentoLote.java"/>
+      <url path="../../../../../padroes/tiss/schemas/TissFaultWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtLoteStatus.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SignaturePropertyType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmAnexoSolicitacaoRadio.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoExecutadoOutras.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtOpmUtilizada.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmBeneficiarioComunicacaoRecibo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/ProtocoloRecebimentoRecursoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/DmCondicaoClinica.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtOutrasDespesas.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/ManifestType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRespostaRecursoItemOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloRecebimentoAnexo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDrogasSolicitadas.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/RetrievalMethodType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloStatus.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtRecursoGlosaRecebimento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtAutorizacaoDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaDadosAnexo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtSituacaoAutorizacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaValorTotal.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoSolicitado.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoGuiaOdontologia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProcedimentoExecutadoSadt.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGuiaCancelamento.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtElegibilidadeRecibo.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtBeneficiarioDados.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmGuiaLote.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/X509IssuerSerialType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtSituacaoClinica.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmSpSadtGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloSolicitacaoStatus.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtReciboCancelaGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDiagnostico.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/SignaturePropertiesType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmDemonstrativoAnaliseConta.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoAnexoSituacaoInicial.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtGlosaReciboOdonto.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtProtocoloDetalheAnexo.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/package-info.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SituacaoAutorizacaoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtIdentEquipe.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CabecalhoTransacao.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtoOdontoSolicitacaoGuia.java"/>
+      <url path="../../../../../../../../org/w3/_2000/_09/xmldsig_/DSAKeyValueType.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmConsultaGuia.java"/>
+      <url path="../../../../../padroes/tiss/schemas/SituacaoProtocoloRecursoWS.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtDiagnosticoOncologico.java"/>
+      <url path="../../../../../padroes/tiss/schemas/CtmRecursoGlosa.java"/>
+      <url path="TissRecursoGlosaPortTypeImpl.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BD_">
+         <hash>
+            <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+            <value n="BOUND_PORT_TYPE" v="{http://www.ans.gov.br/tiss/ws/tipos/tissrecursoglosa/v30200}tissRecursoGlosa_PortType"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{http://www.ans.gov.br/tiss/ws/tipos/tissrecursoglosa/v30200}tissRecursoGlosa_Binding"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="reciboRecursoGlosa"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="protocoloRecebimentoRecursoWS"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://www.ans.gov.br/padroes/tiss/schemas"/>
+                  <value n="BOUND_OPERATION" v="br.gov.ans.padroes.tiss.schemas.ProtocoloRecebimentoRecursoWS.tissRecursoGlosaOperation.br.gov.ans.padroes.tiss.schemas.LoteRecursoGlosaWS"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <list n="BINDING_FILES"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="ee8ab228-0146-1000-825d-c0a89601fbf2"/>
+      <value n="LAST_GENERATION_BOTTOM_UP" v="false"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="tissRecursoGlosa_Port"/>
+            <value n="PORT_BINDING_NAME" v="{http://www.ans.gov.br/tiss/ws/tipos/tissrecursoglosa/v30200}tissRecursoGlosa_Binding"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="br.gov.ans.padroes.tiss.schemas.ProtocoloRecebimentoRecursoWS.tissRecursoGlosaOperation.br.gov.ans.padroes.tiss.schemas.LoteRecursoGlosaWS"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7101" path="/ws_tiss-WebService-WsTISS-03-02-context-root/tissRecursoGlosa"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <list n="PT_">
+         <hash>
+            <value n="AUTO_SERVICE_INTERFACE"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{http://www.ans.gov.br/tiss/ws/tipos/tissrecursoglosa/v30200}tissRecursoGlosa_PortType"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="br.gov.ans.tiss.ws.tipos.tissrecursoglosa.v30200.TissFault"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="tissRecursoGlosaOperation"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="recursoGlosa"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="loteRecursoGlosaWS"/>
+                        <value n="PA_WSDL_PART_NAME" v="recursoGlosa"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.ans.gov.br/padroes/tiss/schemas"/>
+                        <value n="TYPE" v="br.gov.ans.padroes.tiss.schemas.LoteRecursoGlosaWS"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="br.gov.ans.padroes.tiss.schemas.ProtocoloRecebimentoRecursoWS"/>
+                  <value n="OP_NAME" v="tissRecursoGlosa_Operation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="br.gov.ans.tiss.ws.tipos.tissrecursoglosa.v30200.TissRecursoGlosaPortTypeImpl"/>
+            <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="br.gov.ans.tiss.ws.tipos.tissrecursoglosa.v30200.TissRecursoGlosaPortType"/>
+         </hash>
+      </list>
+      <url n="TARGET_PROJECT" path="../../../../../../../../../WebService-WsTISS-03-02.jpr"/>
+      <value n="TOPDOWN_GENERATION_OPTION" v="JAVA"/>
+      <list n="WS_DEPENDENT_VALUE_TYPES"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../../../../../public_html/WEB-INF/wsdl/tissRecursoGlosa.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://www.ans.gov.br/tiss/ws/tipos/tissrecursoglosa/v30200"/>
+      <value n="WS_URI" v="tissRecursoGlosa"/>
+      <url n="WS_WSDL_FILE" path="../../../../../../../../../public_html/WEB-INF/wsdl/tissRecursoGlosa.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="/WEB-INF/wsdl/tissRecursoGlosa.wsdl"/>
+      <list n="WSDL_DEPENDENT_FILES">
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissGuiasV3_02_00.xsd"/>
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissV3_02_00.xsd"/>
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/xmldsig-core-schema.xsd"/>
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissWebServicesV3_02_00.xsd"/>
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissComplexTypesV3_02_00.xsd"/>
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissAssinaturaDigital_v1.01.xsd"/>
+         <url path="../../../../../../../../../public_html/WEB-INF/wsdl/tissSimpleTypesV3_02_00.xsd"/>
+      </list>
+   </hash>
+</jdevws:WebService>

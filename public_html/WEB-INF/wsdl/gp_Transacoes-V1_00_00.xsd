@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gp="http://gp.unimed.coop.br/schemas/V1_00_00" targetNamespace="http://gp.unimed.coop.br/schemas/V1_00_00" elementFormDefault="qualified">
+  <include schemaLocation="gp_ComplexTypes-V1_00_00.xsd"/>
+  <!-- Elemento de mensagem utilizado para tráfego das mensagens XML -->
+  <element name="mensagemXML">
+    <annotation>
+      <documentation>Elemento com a estrutura das mensagens  XML.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="corpoMensagem" type="gp:ct_corpoMensagem"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- Tipo que define o corpo das mensagens utilizadas nas mensagens -->
+  <complexType name="ct_corpoMensagem">
+    <choice>
+      <element name="mensagemEnvio">
+        <complexType>
+          <choice>
+            <element name="solicitarProtocolo" type="gp:ct_solicitarProtocolo"/>
+            <element name="complementarProtocolo" type="gp:ct_complementarProtocolo"/>
+            <element name="respostaAtendimento" type="gp:ct_respostaAtendimento"/>
+            <element name="consultaStatusProtocolo" type="gp:ct_consultaStatusProtocolo"/>
+            <element name="consultaHistorico" type="gp:ct_consultaHistorico"/>
+            <element name="cancelamento" type="gp:ct_cancelamento"/>
+            <element name="encaminharExecucao" type="gp:ct_encaminharExecucao"/>
+          </choice>
+        </complexType>
+      </element>
+      <element name="mensagemRetorno">
+        <complexType>
+          <choice>
+            <element name="respostaSolicitarProtocolo" type="gp:ct_respostasolicitarProtocolo"/>
+            <element name="respostaConsultaStatusProtocolo" type="gp:ct_respostaConsultaStatusProtocolo"/>
+            <element name="respostaConsultaHistorico" type="gp:ct_respostaConsultaHistorico"/>
+            <element name="confirmacao" type="gp:ct_confirmacao"/>
+          </choice>
+        </complexType>
+      </element>
+      <element name="erroInesperado" type="gp:ct_erroInesperado"/>
+    </choice>
+  </complexType>
+  <!-- Elementos que definem as mensagens do Gestão de Protocolos -->
+  <!-- Transação 001 - Solicitar Protocolo -->
+  <complexType name="ct_solicitarProtocolo">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="dadosBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_dadosBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="identificacaoManifestacao">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoManifestacao"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="idresposta" type="gp:st_idResposta" minOccurs="0"/>
+      <element name="numeroTransacaoIntercambio" type="gp:st_nrIdent" minOccurs="0"/>
+      <element name="numeroProtocoloAnterior" type="gp:st_nrProtocolo" minOccurs="0"/>
+      <element name="mensagemLivre" type="gp:st_dsMensagemLivre"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 002 - Resposta da Solicitação de Protocolo -->
+  <complexType name="ct_respostasolicitarProtocolo">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo" minOccurs="1"/>
+      <element name="idResposta" type="gp:st_idResposta" minOccurs="1"/>
+      <element name="mensagemLivre" type="gp:st_dsMensagemLivre" minOccurs="0"/>
+      <element name="origemResposta" type="gp:st_origemResposta"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 003 - Complementar Protocolo de Atendimento -->
+  <complexType name="ct_complementarProtocolo">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo" minOccurs="1"/>
+      <element name="numeroTransacaoIntercambio" type="gp:st_nrIdent" minOccurs="1"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 004 - Confirmação-->
+  <complexType name="ct_confirmacao">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="tipoIdentificador" type="gp:st_identificador"/>
+      <element name="origemResposta" type="gp:st_origemResposta"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 005 - Resposta de Atendimento  -->
+  <complexType name="ct_respostaAtendimento">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo" minOccurs="1"/>
+      <element name="idResposta" type="gp:st_idResposta" minOccurs="1"/>
+      <element name="numeroTransacaoOrigemBeneficiario" type="gp:st_nrIdent" minOccurs="1"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+      <element name="mensagemLivre" type="gp:st_dsMensagemLivre" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 006 - Consulta de Status de Protocolo-->
+  <complexType name="ct_consultaStatusProtocolo">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario" minOccurs="1">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo" minOccurs="1"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!--  Transação 007 - Resposta da Consulta de Status de Protocolo  -->
+  <complexType name="ct_respostaConsultaStatusProtocolo">
+    <sequence>
+      <element name="dataSolicitacaoProtocolo" type="gp:st_data2" minOccurs="0"/>
+      <element name="respostaConsultaStatusProtocolo" minOccurs="0" maxOccurs="1">
+        <complexType>
+          <sequence>
+            <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+            <element name="dataGeracao" type="gp:st_data2"/>
+            <element name="numeroProtocolo" type="gp:st_nrProtocolo"/>
+            <element name="identificacaoManifestacao" type="gp:ct_identificacaoManifestacao" minOccurs="0"/>
+            <element name="nomeBenef" type="gp:st_nomeBenef" minOccurs="0"/>
+            <element name="identificacaoBeneficiario" type="gp:ct_identificacaoBeneficiario" minOccurs="0"/>
+            <element name="numeroTransacaoIntercambioPrestadora" type="gp:st_nrIdent" minOccurs="0"/>
+            <element name="numeroTransacaoOrigemBeneficiario" type="gp:st_nrIdent" minOccurs="1"/>
+            <element name="idResposta" type="gp:st_idResposta"/>
+            <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+            <element name="identificacaoMensagemPedidoManifestacao" type="gp:ct_identificacaoMensagem" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="identificacaoMensagemRespostaManifestacao" type="gp:ct_identificacaoMensagem" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="origemResposta" type="gp:st_origemResposta"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 008 - Consulta Histórico de Protocolo-->
+  <complexType name="ct_consultaHistorico">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo" minOccurs="0"/>
+      <element name="dataSolicitacao" type="gp:st_data2" minOccurs="0"/>
+      <element name="dataResposta" type="gp:st_data2" minOccurs="0"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!--  Transação 009 - Resposta da Consulta de Histórico  -->
+  <complexType name="ct_respostaConsultaHistorico">
+    <sequence>
+      <element name="dataInicioPeriodo" type="gp:st_data2" minOccurs="0"/>
+      <element name="dataFimPeriodo" type="gp:st_data2" minOccurs="0"/>
+      <element name="respostaConsultaHistorico" minOccurs="0" maxOccurs="unbounded">
+        <complexType>
+          <sequence>
+            <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+            <element name="dataGeracao" type="gp:st_data2"/>
+            <element name="idUsuario" type="gp:st_nome"/>
+            <element name="numeroProtocolo" type="gp:st_nrProtocolo"/>
+            <element name="identificacaoManifestacao" type="gp:ct_identificacaoManifestacao" minOccurs="0"/>
+            <element name="nomeBenef" type="gp:st_nomeBenef" minOccurs="0"/>
+            <element name="numeroTransacaoIntercambioPrestadora" type="gp:st_nrIdent" minOccurs="0"/>
+            <element name="numeroTransacaoOrigemBeneficiario" type="gp:st_nrIdent" minOccurs="1"/>
+            <element name="identificacaoBeneficiario" type="gp:ct_identificacaoBeneficiario" minOccurs="0"/>
+            <element name="idResposta" type="gp:st_idResposta"/>
+            <!--<element name="mensagemLivre" type="gp:st_dsMensagemLivre" minOccurs="0" maxOccurs="unbounded"/> -->
+          </sequence>
+        </complexType>
+      </element>
+      <element name="origemResposta" type="gp:st_origemResposta"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 010 - Cancelamento -->
+  <complexType name="ct_cancelamento">
+    <sequence>
+      <element name="numeroTransacaoPrestadora" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario" minOccurs="0">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+      <element name="descricaoMotivo" type="gp:st_dsMotivo" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 011 - Erro Inesperado -->
+  <complexType name="ct_erroInesperado">
+    <sequence>
+      <element name="numeroTransacao" type="gp:st_nrIdent" minOccurs="0"/>
+      <element name="codigoErro" type="gp:st_codigoErro" minOccurs="0"/>
+      <element name="mensagemErro" type="gp:st_msErro" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <!-- Transação 012 - Encaminhar Execucao -->
+  <complexType name="ct_encaminharExecucao">
+    <sequence>
+      <!-- Numero Transação Inicial da Transação "Solicitar Protocolo"-->
+      <element name="numeroTransacaoInicial" type="gp:st_nrIdent"/>
+      <!-- Numero de Controle da Transação "Encaminhar Execução"-->
+      <element name="numeroTransacaoOrigem" type="gp:st_nrIdent"/>
+      <element name="dataGeracao" type="gp:st_data2"/>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="identificacaoBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="dadosBeneficiario">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_dadosBeneficiario"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="identificacaoManifestacao">
+        <complexType>
+          <complexContent>
+            <extension base="gp:ct_identificacaoManifestacao"/>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="numeroTransacaoIntercambio" type="gp:st_nrIdent" minOccurs="0"/>
+      <!-- Número de protocolo gerado pela Unimed Origem -->
+      <element name="numeroProtocolo" type="gp:st_nrProtocolo"/>
+      <element name="numeroProtocoloAnterior" type="gp:st_nrProtocolo" minOccurs="0"/>
+      <element name="mensagemLivre" type="gp:st_dsMensagemLivre"/>
+      <element name="numeroVersaoProtocolo" type="gp:st_versaoProtocolo"/>
+    </sequence>
+  </complexType>
+  <!-- Elementos que definem as mensagens gp utilizadas no padrão SOAP (WSDLs) -->
+  <!-- 001 - Elemento com a mensagem da transação Solicitar Protocolo. -->
+  <element name="solicitarProtocoloWS">
+    <annotation>
+      <documentation>001 - Elemento com a mensagem da transação Solicitar Protocolo</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="solicitarProtocolo" type="gp:ct_solicitarProtocolo"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 002 - Elemento com a mensagem da transação de Resposta de Solicitação de Protocolo. -->
+  <element name="respostasolicitarProtocoloWS">
+    <annotation>
+      <documentation>002 - Elemento com a mensagem da transação de Resposta de Solicitação de Protocolo.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="respostasolicitarProtocolo" type="gp:ct_respostasolicitarProtocolo"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 003 - Elemento com a mensagem da transação Complementar Protocolo -->
+  <element name="complementoProtocoloWS">
+    <annotation>
+      <documentation>003 - Elemento com a mensagem da transação Complementar Protocolo</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="pedidoComplementoAutorizacao" type="gp:ct_complementarProtocolo"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 004 - Elemento com a mensagem da transação de confirmação -->
+  <element name="confirmacaoWS">
+    <annotation>
+      <documentation>004 - Elemento com a mensagem da transação de confirmação.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="confirmacao" type="gp:ct_confirmacao"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 005 - Elemento com a mensagem da transação de Resposta de Atendimento. -->
+  <element name="respostaAtendimentoWS">
+    <annotation>
+      <documentation>005 - Elemento com a mensagem da transação de Resposta de Atendimento.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="respostaAtendimento" type="gp:ct_respostaAtendimento"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 006 - Elemento com a mensagem da transação de Consulta de Status de Protocolo. -->
+  <element name="consultaStatusProtocoloWS">
+    <annotation>
+      <documentation>006 - Elemento com a mensagem da transação de Consulta de Status de Protocolo.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="consultaStatusProtocolo" type="gp:ct_consultaStatusProtocolo"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 007 - Elemento com a mensagem da transação de Resposta da Consulta de Status do Protocolo -->
+  <element name="respostaConsultaStatusProtocoloWS">
+    <annotation>
+      <documentation>007 - Elemento com a mensagem da transação de Resposta da Consulta de Status do Protocolo </documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="respostaConsultaStatusProtocolo" type="gp:ct_respostaConsultaStatusProtocolo"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 008 - Elemento com a mensagem da transação de Consulta de Histórico-->
+  <element name="consultaHistoricoWS">
+    <annotation>
+      <documentation>008- Elemento com a mensagem da transação de Consulta de Histórico</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="consultaHistorico" type="gp:ct_consultaHistorico"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 009 - Elemento com a mensagem da transação de Resposta da Consulta de Histórico. -->
+  <element name="respostaConsultaHistoricoWS">
+    <annotation>
+      <documentation>009 - Elemento com a mensagem da transação de Resposta da Consulta de Histórico</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="respostaConsultaHistorico" type="gp:ct_respostaConsultaHistorico"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 010 - Elemento com a mensagem da transação de cancelamento -->
+  <element name="cancelamentoWS">
+    <annotation>
+      <documentation>010 - Elemento com a mensagem da transação de cancelamento.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="cancelamento" type="gp:ct_cancelamento"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 011 - Elemento com a mensagem da erro inesperado. -->
+  <element name="erroInesperadoWS">
+    <annotation>
+      <documentation>011 - Elemento com a mensagem da erro inesperado</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="erroInesperado" type="gp:ct_erroInesperado"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- 012 - Elemento com a mensagem encaminhar execucao -->
+  <element name="encaminharExecucaoWS">
+    <annotation>
+      <documentation>012 - Elemento com a mensagem da transação encaminhar execucao.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="cabecalhoTransacao" type="gp:ct_cabecalhoTransacao"/>
+        <element name="encaminharExecucao" type="gp:ct_encaminharExecucao"/>
+        <element name="hash" type="gp:st_hashArquivo"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

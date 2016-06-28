@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gp="http://gp.unimed.coop.br/schemas/V1_00_00" targetNamespace="http://gp.unimed.coop.br/schemas/V1_00_00" elementFormDefault="qualified">
+  <!-- Código de identificação da transação -->
+  <simpleType name="st_cdTrans">
+    <restriction base="string">
+      <enumeration value="001"/>
+      <enumeration value="002"/>
+      <enumeration value="003"/>
+      <enumeration value="004"/>
+      <enumeration value="005"/>
+      <enumeration value="006"/>
+      <enumeration value="007"/>
+      <enumeration value="008"/>
+      <enumeration value="009"/>
+      <enumeration value="010"/>
+      <enumeration value="011"/>
+      <enumeration value="012"/>
+      <!-- 001- Solicitar Protocolo -->
+      <!-- 002 - Resposta da Solicitação de Protocolo -->
+      <!-- 003 - Complementar Protocolo -->
+      <!-- 004 - Confirmação -->
+      <!-- 005 - Responder Atendimento -->
+      <!-- 006- Consulta Status de Protocolo -->
+      <!-- 007 - Resposta da Consulta de Status de Protocolo -->
+      <!-- 008 - Consulta Histórico-->
+      <!-- 009 - Resposta da Consulta Histórico -->
+      <!-- 010 - Cancelamento -->
+      <!-- 011 - Erro Inesperado-->
+      <!-- 012 - Encaminhar Execução-->
+    </restriction>
+  </simpleType>
+  <!-- Tipo do Cliente -->
+  <simpleType name="st_tpCliente">
+    <restriction base="string">
+      <enumeration value="UNIMED"/>
+      <enumeration value="PORTAL"/>
+      <enumeration value="ADMIN"/>
+      <enumeration value="SYNC"/>
+      <!-- UNIMED = Mensagem enviada pelo Sistema da Unimed -->
+      <!-- PORTAL= Mensagem enviada pela Gestão de Protocolos -->
+      <!-- ADMIN = Mensagem enviada pelo ADMIN para o Gestão de Protocolos, para transacoes destinadas a Unimeds on-line mas que estejam operando temporariamente de forma off-line -->
+      <!-- SYNC = Mensagem de sincronizacao entre ADMIN e Gestão de Protocolos -->
+    </restriction>
+  </simpleType>
+  <!-- Código de Unimed -->
+  <simpleType name="st_cdUnimed">
+    <restriction base="integer">
+      <totalDigits value="4"/>
+    </restriction>
+  </simpleType>
+  <!-- Número de Registro ANS -->
+  <simpleType name="st_regANS">
+    <restriction base="integer">
+      <totalDigits value="6"/>
+    </restriction>
+  </simpleType>
+  <!-- Número de identificação da transação-->
+  <simpleType name="st_nrIdent">
+    <restriction base="integer">
+      <totalDigits value="10"/>
+    </restriction>
+  </simpleType>
+  <!-- Código de identificação do beneficiário, incluindo dígito verificador, sendo o código da unimed colocado em campo à parte-->
+  <simpleType name="st_idBenef">
+    <restriction base="string">
+      <maxLength value="13"/>
+    </restriction>
+  </simpleType>
+  <!-- id Usuario -->
+  <simpleType name="st_nome">
+    <restriction base="string">
+      <maxLength value="100"/>
+    </restriction>
+  </simpleType>
+  <!--Número do Protocolo-->
+  <simpleType name="st_nrProtocolo">
+    <restriction base="integer">
+      <totalDigits value="20"/>
+    </restriction>
+  </simpleType>
+  <!-- Versão do Protocolo -->
+  <simpleType name="st_versaoProtocolo">
+    <restriction base="string">
+      <enumeration value="001"/>
+      <!-- 001 = versão 1.0-->
+    </restriction>
+  </simpleType>
+  <!-- Nome do Beneficiario -->
+  <simpleType name="st_nomeBenef">
+    <restriction base="string">
+      <maxLength value="70"/>
+    </restriction>
+  </simpleType>
+  <!--DDD-->
+  <simpleType name="st_ddd">
+    <restriction base="integer">
+      <totalDigits value="02"/>
+    </restriction>
+  </simpleType>
+  <!-- Número de Telefone do Profissional Solicitante-->
+  <simpleType name="st_nrTelefone">
+    <restriction base="integer">
+      <totalDigits value="11"/>
+    </restriction>
+  </simpleType>
+  <!-- Endereço de E-mail do Profissional Solicitante -->
+  <simpleType name="st_endEmail">
+    <restriction base="string">
+      <maxLength value="60"/>
+    </restriction>
+  </simpleType>
+  <!-- Origem da Resposta da Solicitação -->
+  <simpleType name="st_origemResposta">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <!-- 1 = Sistema próprio da Unimed -->
+      <!-- 2 = Gestão de Protocolos -->
+    </restriction>
+  </simpleType>
+  <!-- cnpj ou cpf  -->
+  <simpleType name="st_cnpjCpf">
+    <restriction base="integer">
+      <totalDigits value="15"/>
+    </restriction>
+  </simpleType>
+  <!-- mensagem livre -->
+  <simpleType name="st_dsMensagemLivre">
+    <restriction base="string">
+      <maxLength value="1000"/>
+    </restriction>
+  </simpleType>
+  <!-- data -->
+  <simpleType name="st_data2">
+    <restriction base="date"/>
+  </simpleType>
+  <!-- Descrição do Motivo do Cancelamento -->
+  <simpleType name="st_dsMotivo">
+    <restriction base="string">
+      <maxLength value="1000"/>
+    </restriction>
+  </simpleType>
+  <!-- Hash do arquivo -->
+  <simpleType name="st_hashArquivo">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Resposta da Manifestação-->
+  <simpleType name="st_idResposta">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <enumeration value="3"/>
+      <enumeration value="4"/>
+      <!-- 1 - Pendente -->
+      <!-- 2 - Em andamento -->
+      <!-- 3 - Finalizado-->
+      <!-- 4 - Cancelado-->
+    </restriction>
+  </simpleType>
+  <!-- Codigo dos erros possíveis nas mensagens de erro -->
+  <simpleType name="st_codigoErro">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <enumeration value="3"/>
+      <enumeration value="4"/>
+      <!-- Código 1 - Código do beneficiário inexistente  -->
+      <!-- Código 2 - Timeout -->
+      <!-- Código 3 - Código do beneficiário inativo -->
+      <!-- Código 4 - Protocolo informado não existe -->
+    </restriction>
+  </simpleType>
+  <!-- mensagem de erro -->
+  <simpleType name="st_msErro">
+    <restriction base="string">
+      <maxLength value="120"/>
+    </restriction>
+  </simpleType>
+  <!-- Identifica se a transação foi recebida e processada -->
+  <simpleType name="st_identificador">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <!-- 1 - Confirmado -->
+      <!-- 2 - Situação Inválida -->
+    </restriction>
+  </simpleType>
+  <!-- Tipo da Manifestacao -->
+  <simpleType name="st_tpManifestacao">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <enumeration value="3"/>
+      <enumeration value="4"/>
+      <enumeration value="5"/>
+      <enumeration value="6"/>
+      <!--1 - Elogio-->
+      <!--2 - Reclamação -->
+      <!--3 - Denuncia -->
+      <!--4 - Sugestão-->
+      <!--5 - Dúvida -->
+      <!--6 - Solicitação -->
+    </restriction>
+  </simpleType>
+  <!-- Tipo da Categoria -->
+  <simpleType name="st_tpCategoria">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <enumeration value="3"/>
+      <enumeration value="4"/>
+      <enumeration value="5"/>
+      <enumeration value="6"/>
+      <enumeration value="7"/>
+      <enumeration value="8"/>
+      <enumeration value="9"/>
+      <enumeration value="10"/>
+      <enumeration value="11"/>
+      <enumeration value="12"/>
+      <enumeration value="13"/>
+      <enumeration value="14"/>
+      <enumeration value="15"/>
+      <enumeration value="16"/>
+      <enumeration value="17"/>
+      <enumeration value="18"/>
+      <enumeration value="19"/>
+      <!--1.Médicos cooperados-->
+      <!--2.Hospitais / Clínicas Credenciadas-->
+      <!--3.Hospitais / Clínicas Unimed -->
+      <!--4.Operadora-->
+      <!--5.Coberturas -->
+      <!--6.Carência -->
+      <!--7.Fatura -->
+      <!--8.Cancelamento de Plano -->
+      <!--9.Compra de Plano -->
+      <!--10.Alterações Cadastrais -->
+      <!--11.Estorno -->
+      <!--12.Posição de Pagamento -->
+      <!--13.IRPF -->
+      <!--14.Parcerias/Doações -->
+      <!--15.2ª via de boleto -->
+      <!--16.Envio de Cartão -->
+      <!--17.Documentos -->
+      <!--18. Guia Médico -->
+      <!--19. Procedimento Médico -->
+    </restriction>
+  </simpleType>
+  <!-- Tipo da Manifestacao -->
+  <simpleType name="st_tpSentimento">
+    <restriction base="integer">
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <enumeration value="3"/>
+      <enumeration value="4"/>
+      <!--1 - Calmo-->
+      <!--2 - Desconfiado -->
+      <!--3 - Nervoso -->
+      <!--4 - Satisfeito-->
+    </restriction>
+  </simpleType>
+</schema>

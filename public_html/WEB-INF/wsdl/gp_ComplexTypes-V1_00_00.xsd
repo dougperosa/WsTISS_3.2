@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gp="http://gp.unimed.coop.br/schemas/V1_00_00" xmlns:ns1="http://gp.unimed.coop.br/schemas/V1_00_00" targetNamespace="http://gp.unimed.coop.br/schemas/V1_00_00" elementFormDefault="qualified">
+  <include schemaLocation="gp_SimpleTypes-V1_00_00.xsd"/>
+  <!-- cabeçalho de todas as transações especificadas no gp  -->
+  <complexType name="ct_cabecalhoTransacao">
+    <sequence>
+      <element name="codigoTransacao" type="gp:st_cdTrans"/>
+      <element name="tipoCliente" type="gp:st_tpCliente"/>
+      <element name="codigoUnimedOrigemMensagem" type="gp:st_cdUnimed"/>
+      <element name="codigoUnimedDestinoMensagem" type="gp:st_cdUnimed" minOccurs="0"/>
+      <element name="numeroRegistroANS" type="gp:st_regANS" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <!-- Identificador do beneficiário (carteirinha)-->
+  <complexType name="ct_identificacaoBeneficiario">
+    <sequence>
+      <element name="codigoUnimed" type="gp:st_cdUnimed"/>
+      <!-- Códgo de identificação do beneficiário, incluindo o dígto verificador-->
+      <element name="codigoIdentificacao" type="gp:st_idBenef"/>
+    </sequence>
+  </complexType>
+  <!-- Identificador da Mensagem Livre - Resposta Consulta Status e Resposta Consulta Historico)-->
+  <complexType name="ct_identificacaoMensagem">
+    <sequence>
+      <element name="idUsuario" type="gp:st_nome"/>
+      <element name="dataEnvioMensagem" type="gp:st_data2" minOccurs="0"/>
+      <element name="dataRespostaMensagem" type="gp:st_data2" minOccurs="0"/>
+      <element name="mensagemLivre" type="gp:st_dsMensagemLivre" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="ct_dadosBeneficiario">
+    <sequence>
+      <element name="nomeBenef" type="gp:st_nomeBenef" minOccurs="0"/>
+      <element name="cdCPF" type="gp:st_cnpjCpf" minOccurs="0"/>
+      <element name="ddd" type="gp:st_ddd" minOccurs="1"/>
+      <element name="telefone" type="gp:st_nrTelefone" minOccurs="1"/>
+      <element name="email" type="gp:st_endEmail" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <!-- Identificador da manifestacao-->
+  <complexType name="ct_identificacaoManifestacao">
+    <sequence>
+      <element name="tipoManifestacao" type="gp:st_tpManifestacao"/>
+      <element name="tipoCategoria" type="gp:st_tpCategoria"/>
+      <element name="tipoSentimento" type="gp:st_tpSentimento" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>

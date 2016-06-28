@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://gp.unimed.coop.br/solicitarProtocolo/webservices/V1_00_00" xmlns:gp="http://gp.unimed.coop.br/schemas/V1_00_00" name="solicitarProtocolo" targetNamespace="http://gp.unimed.coop.br/solicitarProtocolo/webservices/V1_00_00">
+  <wsdl:types>
+    <xsi:schema xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://gp.unimed.coop.br/solicitarProtocolo/webservices/V1_00_00">
+      <xsi:import namespace="http://gp.unimed.coop.br/schemas/V1_00_00" schemaLocation="gp_Transacoes-V1_00_00.xsd"/>
+    </xsi:schema>
+  </wsdl:types>
+  <message name="solicitarProtocoloRequest">
+    <part name="solicitarProtocoloRequest" element="gp:solicitarProtocoloWS"/>
+  </message>
+  <message name="solicitarProtocoloResponse">
+    <part name="solicitarProtocoloResponse" element="gp:respostasolicitarProtocoloWS"/>
+  </message>
+  <message name="ErroInesperadoFault">
+    <part name="ErroInesperadoFault" element="gp:erroInesperadoWS"/>
+  </message>
+  <portType name="solicitarProtocoloPortType">
+    <operation name="solicitarProtocoloOperation">
+      <input message="tns:solicitarProtocoloRequest"/>
+      <output message="tns:solicitarProtocoloResponse"/>
+      <fault name="ErroInesperadoFault" message="tns:ErroInesperadoFault"/>
+    </operation>
+  </portType>
+  <binding name="solicitarProtocoloBinding" type="tns:solicitarProtocoloPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="solicitarProtocoloOperation">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ErroInesperadoFault">
+        <soap:fault name="ErroInesperadoFault" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="solicitarProtocolo">
+    <port name="solicitarProtocoloPort" binding="tns:solicitarProtocoloBinding">
+      <soap:address location="https://gpuhml.unimed.coop.br/gpu/v1_00_00/SolicitarProtocolo"/>
+    </port>
+  </service>
+</definitions>
